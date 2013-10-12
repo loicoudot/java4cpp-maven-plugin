@@ -22,7 +22,7 @@ public class GenerateMojo extends AbstractMojo {
     /**
      * Clean output directory.
      * 
-     * @parameter default-value="true"
+     * @parameter default-value="false"
      */
     private boolean clean;
 
@@ -34,21 +34,29 @@ public class GenerateMojo extends AbstractMojo {
     private String jarFiles;
 
     /**
+     * Sets to true to generate only modified proxies.
+     * 
      * @paramter default-value="true"
      */
     private boolean useHash;
 
     /**
+     * Number of concurrent proxies generation.
+     * 
      * @parameter default-value="2"
      */
     private int nbThread;
 
     /**
+     * A comma separated list of mappings files.
+     * 
      * @parameter
      */
     private String mappingsFile;
 
     /**
+     * A comma separated list of templates files.
+     * 
      * @parameter
      */
     private String templatesFile;
@@ -71,7 +79,7 @@ public class GenerateMojo extends AbstractMojo {
             Core java4cppCore = new Core();
             java4cppCore.execute(context);
         } catch (Exception e) {
-            getLog().error("java4cpp error");
+            getLog().error("java4cpp error: ", e);
             throw new org.apache.maven.plugin.MojoExecutionException("java4cpp error: ", e);
         }
         getLog().info("java4cpp success");
