@@ -20,7 +20,8 @@ public class GenerateMojo extends AbstractMojo {
     private String outputDirectory;
 
     /**
-     * Clean output directory.
+     * Clean output directory. Warning, deletes all files in the target
+     * directory.
      * 
      * @parameter default-value="false"
      */
