@@ -12,7 +12,7 @@ import org.apache.maven.plugin.MojoExecutionException;
  */
 public class GenerateMojo extends AbstractMojo {
     /**
-     * Location of the C++ proxies files.
+     * Location of the generated C++ proxies files.
      * 
      * @parameter property="${project.build.directory}"
      * @required
@@ -20,8 +20,8 @@ public class GenerateMojo extends AbstractMojo {
     private String outputDirectory;
 
     /**
-     * Clean output directory. Warning, deletes all files in the target
-     * directory.
+     * Clean output directory. Warning, deletes all files other than proxies in
+     * the output directory.
      * 
      * @parameter default-value="false"
      */
@@ -42,7 +42,7 @@ public class GenerateMojo extends AbstractMojo {
     private boolean useHash;
 
     /**
-     * Number of concurrent proxies generation.
+     * Number of concurrent proxies generator.
      * 
      * @parameter default-value="2"
      */
