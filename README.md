@@ -1,24 +1,26 @@
 java4cpp-maven-plugin
 =====================
 
-Maven plugin for executing java4cpp in a pom.xml file.
+Maven plugin for controlling java4cpp execution.
+
+Gets full informations directly on the [java4cpp-core](https://github.com/loicoudot/java4cpp-core/wiki) page project.
 
 ## Goals ##
 
 The plugin as one goal `generate` that process a list of jars and generate associated C++ proxies files in the specified directory.
-By default that goal is mapped to the pahse `process-classes`.
+By default that goal is mapped to the phase `process-classes`.
 
 ## Configuration ##
        
 The list of parameters for the goal `generate`:       
                     
-* `outputDirectory` Location of the generated C++ proxies files
-* `clean`           Clean output directory
-* `jarFiles`           A comma separated list of jar files to analyse
-* `useHash`            Sets to true to generate only modified proxies
-* `nbThread`           Number of concurrent proxies generator
-* `mappingsFile`       A comma separated list of mappings files
-* `templatesFile`      A comma separated list of templates files
+* `outputDirectory` Location of the generated C++ proxies files.
+* `clean`           Clean output directory.
+* `jarFiles`           A comma separated list of jar files to analyse.
+* `useHash`            Sets to true to generate only modified proxies.
+* `nbThread`           Number of concurrent proxies generator.
+* `mappingsFile`       A comma separated list of mappings files.
+* `templatesFile`      A comma separated list of templates files.
 
 java4cpp looks for mappings and templates files inside jars resources and if failed in the file system.
 
