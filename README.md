@@ -27,34 +27,34 @@ java4cpp looks for mappings and templates files inside jars resources and if fai
 ## Sample pom file ##
 
 This is a sample pom.xml file 
-
-			<plugin>
-				<groupId>com.github.loicoudot.java4cpp</groupId>
-				<artifactId>java4cpp-maven-plugin</artifactId>
-				<version>1.0.0</version>
-				<executions>
-					<execution>
-						<phase>install</phase>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<jarFiles>ajartoanalyze.jar</jarFiles>
-					<outputDirectory>cpp/java4cpp</outputDirectory>
-					<clean>true</clean>
-					<mappingsFile>base-mappings.xml</mappingsFile>
-					<templatesFile>base-templates.xml;string-templates.xml</templatesFile>
-				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>com.github.loicoudot.java4cpp</groupId>
-						<artifactId>java4cpp-templates</artifactId>
-						<version>1.0.0</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-
+```xml
+<plugin>
+	<groupId>com.github.loicoudot.java4cpp</groupId>
+	<artifactId>java4cpp-maven-plugin</artifactId>
+	<version>1.0.0</version>
+	<executions>
+		<execution>
+			<phase>install</phase>
+			<goals>
+				<goal>generate</goal>
+			</goals>
+		</execution>
+	</executions>
+	<configuration>
+		<jarFiles>ajartoanalyze.jar</jarFiles>
+		<outputDirectory>cpp/java4cpp</outputDirectory>
+		<clean>true</clean>
+		<mappingsFile>base-mappings.xml</mappingsFile>
+		<templatesFile>base-templates.xml;string-templates.xml</templatesFile>
+	</configuration>
+	<dependencies>
+		<dependency>
+			<groupId>com.github.loicoudot.java4cpp</groupId>
+			<artifactId>java4cpp-templates</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+</plugin>
+```
 Like in the exemple above, you can add dependencies inside the java4cpp-maven-plugin for resolving the templates or mappings definition.
 
