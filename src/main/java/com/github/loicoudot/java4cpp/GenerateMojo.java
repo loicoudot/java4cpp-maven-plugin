@@ -42,9 +42,9 @@ public class GenerateMojo extends AbstractMojo {
     private boolean useHash;
 
     /**
-     * Number of concurrent proxies generator.
+     * Number of concurrent proxies generator. Experimental.
      * 
-     * @parameter default-value="2"
+     * @parameter default-value="1"
      */
     private int nbThread;
 
