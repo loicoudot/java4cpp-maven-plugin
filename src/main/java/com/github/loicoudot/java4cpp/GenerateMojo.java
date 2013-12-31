@@ -62,6 +62,22 @@ public class GenerateMojo extends AbstractMojo {
      */
     private String templatesFile;
 
+    /**
+     * Sets to generate a file containing all the symbols generated during
+     * processing.
+     * 
+     * @parameter
+     */
+    private String exportFile;
+
+    /**
+     * A comma separated list of files containing symbols to use instead of
+     * generating new ones.
+     * 
+     * @parameter
+     */
+    private String importsFile;
+
     @Override
     public void execute() throws MojoExecutionException {
 
@@ -74,6 +90,8 @@ public class GenerateMojo extends AbstractMojo {
             settings.setNbThread(nbThread);
             settings.setMappingsFile(mappingsFile);
             settings.setTemplatesFile(templatesFile);
+            settings.setExportFile(exportFile);
+            settings.setImportsFile(importsFile);
 
             Context context = new Context(settings);
 
