@@ -37,7 +37,7 @@ public class GenerateMojo extends AbstractMojo {
     /**
      * Sets to true to generate only modified proxies.
      * 
-     * @paramter default-value="true"
+     * @parameter default-value="true"
      */
     private boolean useHash;
 
@@ -71,12 +71,26 @@ public class GenerateMojo extends AbstractMojo {
     private String exportFile;
 
     /**
+     * Sets a regex to filter the lists of symbols in the export file
+     * 
+     * @parameter
+     */
+    private String exportFilter;
+
+    /**
      * A comma separated list of files containing symbols to use instead of
      * generating new ones.
      * 
      * @parameter
      */
     private String importsFile;
+
+    /**
+     * Sets a regex to filter the lists of symbols in the imports files
+     * 
+     * @parameter
+     */
+    private String importFilter;
 
     @Override
     public void execute() throws MojoExecutionException {
@@ -91,7 +105,9 @@ public class GenerateMojo extends AbstractMojo {
             settings.setMappingsFile(mappingsFile);
             settings.setTemplatesFile(templatesFile);
             settings.setExportFile(exportFile);
+            settings.setExportFilter(exportFilter);
             settings.setImportsFile(importsFile);
+            settings.setImportFilter(importFilter);
 
             Context context = new Context(settings);
 
