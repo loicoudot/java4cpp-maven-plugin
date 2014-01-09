@@ -96,6 +96,8 @@ public class GenerateMojo extends AbstractMojo {
     public void execute() throws MojoExecutionException {
 
         try {
+            freemarker.log.Logger.selectLoggerLibrary(freemarker.log.Logger.LIBRARY_NONE);
+
             Settings settings = new Settings();
             settings.setClean(clean);
             settings.setTargetPath(outputDirectory);
