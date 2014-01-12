@@ -21,6 +21,10 @@ The list of parameters for the goal `generate`:
 * `nbThread`           Number of concurrent proxies generator.
 * `mappingsFile`       A comma separated list of mappings files.
 * `templatesFile`      A comma separated list of templates files.
+* `exportFile`		Sets to generate a file containing all the symbols generated during processing.
+* `exportFilter`	Sets a regex to filter the lists of symbols in the export file.
+* `importsFile`		A comma separated list of files containing symbols to use instead of generating new ones.
+* `importsFilter`	Sets a regex to filter the lists of symbols in the imports files.
 
 java4cpp looks for mappings and templates files inside jars resources and if failed in the file system.
 
@@ -31,7 +35,7 @@ This is a sample pom.xml file
 <plugin>
 	<groupId>com.github.loicoudot.java4cpp</groupId>
 	<artifactId>java4cpp-maven-plugin</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.3</version>
 	<executions>
 		<execution>
 			<phase>install</phase>
@@ -51,7 +55,7 @@ This is a sample pom.xml file
 		<dependency>
 			<groupId>com.github.loicoudot.java4cpp</groupId>
 			<artifactId>java4cpp-templates</artifactId>
-			<version>1.0.0</version>
+			<version>1.0.1</version>
 		</dependency>
 	</dependencies>
 </plugin>
